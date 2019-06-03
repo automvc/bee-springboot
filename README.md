@@ -8,7 +8,7 @@ Using **Bee+SpringBoot** combination, the development speed is fast and the codi
 It can not only save software development time, but also save software development cost.  
 **The development speed and cost are not inferior to PHP and Rails**.  
 
-##  Rapid Application Development Demo:  
+##  Rapid Microservice Development Demo:  
 ###  Bee+Spring Boot,develop a history order manage function(Server point) in ten minutes.  
 
 **Bee** is an easy and high efficiency ORM framework.    
