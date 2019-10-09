@@ -15,11 +15,11 @@ It can not only save software development time, but also save software developme
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
 **You don't need to write the Dao by yourself anymore**.  
 **Good Feature:**  Timesaving/Tasteful, Easy, Automatic (**Tea Style**)   
+Latest Version: Bee 1.4.8   
 **Bee** see:  
 https://github.com/automvc/bee  
 
 ## [中文介绍](../../../bee-springboot/blob/master/README_CN.md)  
 [点击链接可查看中文介绍](../../../bee-springboot/blob/master/README_CN.md)  
-
 
 #### Author's email:    honeysoft@126.com  
