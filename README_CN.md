@@ -31,7 +31,7 @@ Bee是一种更接近SQL语言思维的ORM框架，
 * 8.SQL中排序,分页支持。  
 * 9.支持直接返回Json格式查询结果;链式编程。  
 
-
+Bee最新版本: V1.4.8  
 **Bee** 网址:  
 https://github.com/automvc/bee  
 **Bee在gitee** 的网址:  
