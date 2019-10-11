@@ -32,6 +32,6 @@
 	</bean>
 	<bean id="objSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
 	</bean>
-	<bean id="objSQLRichServiceImpl" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
+	<bean id="objSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
 	</bean>
 </beans>
