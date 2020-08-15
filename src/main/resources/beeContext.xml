@@ -19,6 +19,7 @@
 
 	<bean id="beeFactory" class="org.teasoft.honey.osql.core.BeeFactory">
 		<property name="dataSource" ref="dataSource"></property>
+		<property name="honeyFactory" ref="honeyFactory"></property>
 	</bean>
 	<bean id="sessionFactory" class="org.teasoft.honey.osql.core.SessionFactory">
 		<property name="beeFactory" ref="beeFactory"></property>
@@ -30,8 +31,18 @@
 	</bean>
 	<bean id="suidRich" class="org.teasoft.honey.osql.core.ObjSQLRich">
 	</bean>
+	<bean id="preparedSql" class="org.teasoft.honey.osql.core.PreparedSqlLib">
+		<property name="beeSql" ref="beeSql"></property>
+	</bean>
 	<bean id="objSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
 	</bean>
 	<bean id="objSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
 	</bean>
+	
+<!-- 	<bean id="nameTranslate" class="org.teasoft.honey.osql.name.OriginalName"> </bean> -->
+	
+	<bean id="honeyFactory" class="org.teasoft.honey.osql.core.HoneyFactory">
+<!-- 	    <property name="nameTranslate" ref="nameTranslate"></property> -->
+	</bean>
+	
 </beans>

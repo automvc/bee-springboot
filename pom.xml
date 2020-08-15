@@ -19,6 +19,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
+		<bee.version>1.8-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
@@ -53,13 +54,13 @@
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
-			<version>1.4.2</version>
+			<version>${bee.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>honey</artifactId>
-			<version>1.4.23</version>
+			<version>${bee.version}</version>
 		</dependency>
 
 		<dependency>
