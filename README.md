@@ -9,13 +9,20 @@ It can not only save software development time, but also save software developme
 **The development speed and cost are not inferior to PHP and Rails**.  
 
 ##  Rapid Microservice Development Demo:  
-###  Bee+Spring Boot,develop a history order manage function(Server point) in ten minutes.  
+###  Bee+Spring Boot,develop a history order manage function(Server point) in ten minutes. 
+
+
+Quick Start:
+=========	
+## 1. Run As-->Maven Install-->start Application   
+## 2. visit in Browser with url:  
+http://localhost:8080/orderhistory/list 
 
 **Bee** is an easy and high efficiency ORM framework.    
 **Coding Complexity is O(1),it means that Bee will do the Dao for you**.  
 **You don't need to write the Dao by yourself anymore**.  
 **Good Feature:**  Timesaving/Tasteful, Easy, Automatic (**Tea Style**)   
-Latest Version: Bee 1.4.8   
+Latest Version: Bee V1.9 (2021-03)   
 **Bee** see:  
 https://github.com/automvc/bee  
 
