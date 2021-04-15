@@ -1,28 +1,30 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.automvc</groupId>
-	<artifactId>bee-springboot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>org.teasoft</groupId>
+	<artifactId>bee-spring-boot</artifactId>
+	<version>1.9-SNAPSHOT</version>
 
-	<packaging>war</packaging>
-	<name>bee-springboot</name>
-	<description>bee-springboot</description>
+	<packaging>jar</packaging>
+	<name>bee-spring-boot</name>
+	<description>bee-spring-boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.15.RELEASE</version>
+		<version>1.5.16.RELEASE</version>
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.7</java.version>
-		<bee.version>1.8-SNAPSHOT</bee.version>
+		<bee.version>1.9-SNAPSHOT</bee.version>
 	</properties>
 
 	<dependencies>
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -31,6 +33,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -64,31 +67,31 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.automvc</groupId>
-			<artifactId>comm</artifactId>
-			<version>1.0.2-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/automvc-comm-basic2.jar</systemPath>
+			<groupId>org.teasoft</groupId>
+			<artifactId>bee-ext</artifactId>
+			<version>${bee.version}</version>
 		</dependency>
 
-
-		<!-- 打包成war -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
+
+<!-- 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure-processor</artifactId>
+			<optional>true</optional>
+		</dependency> -->
+
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
+
 </project>
