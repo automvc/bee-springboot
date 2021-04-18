@@ -1,4 +1,8 @@
 # Auto Configure
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.teasoft.spring.boot.config.BeeAutoConfiguration,\
-org.teasoft.spring.boot.config.BeeManageConfig
+org.teasoft.spring.boot.config.BeeProperties,\
+org.teasoft.spring.boot.config.BeeManageConfig,\
+org.teasoft.spring.boot.config.BeeXmlConfiguration,\
+org.teasoft.spring.boot.config.BeeAutoConfiguration
+
+
