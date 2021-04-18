@@ -31,15 +31,14 @@ import org.teasoft.beex.config.BeeProNaming;
 import org.teasoft.beex.config.BeeProPearFlowerId;
 import org.teasoft.beex.config.BeeProReturnStringList;
 import org.teasoft.beex.config.BeeProSelectJson;
-import org.teasoft.beex.config.BeeProShowSQL;
+import org.teasoft.beex.config.BeeProShowSql;
 import org.teasoft.beex.config.ManageConfig;
 
 /**
  * @author Kingstar
  * @since  1.9
  */
-//@EnableAutoConfiguration
-@AutoConfigureAfter(BeeAutoConfiguration.class)
+@AutoConfigureAfter(BeeProperties.class)
 public class BeeManageConfig {
 	@Autowired
 	private BeePro beePro;
@@ -62,28 +61,29 @@ public class BeeManageConfig {
 	@Autowired
 	private BeeProSelectJson beeProSelectJson;
 	@Autowired
-	private BeeProShowSQL beeProShowSQL;
+	private BeeProShowSql beeProShowSql;
 	
 	@Bean
 	@ConditionalOnClass(ManageConfig.class)
-	public ManageConfig getManageConfig() {
-		ManageConfig manageConfig=new ManageConfig();
+	public ManageConfig manageConfig() {
 		
-		manageConfig.setBeePro(beePro);
-		manageConfig.setBeeProCache(beeProCache);
-		manageConfig.setBeeProDb(beeProDb);
-		manageConfig.setBeeProGenid(beeProGenid);
-		manageConfig.setBeeProMoreTable(beeProMoreTable);
-		manageConfig.setBeeProMultiDS(beeProMultiDS);
-		manageConfig.setBeeProNaming(beeProNaming);
-		manageConfig.setBeeProPearFlowerId(beeProPearFlowerId);
-		manageConfig.setBeeProReturnStringList(beeProReturnStringList);
-		manageConfig.setBeeProSelectJson(beeProSelectJson);
-		manageConfig.setBeeProShowSQL(beeProShowSQL);
+		ManageConfig manageConfig1=new ManageConfig();
 		
-		manageConfig.updateConfig();  //TODO
+		manageConfig1.setBeePro(beePro);
+		manageConfig1.setBeeProCache(beeProCache);
+		manageConfig1.setBeeProDb(beeProDb);
+		manageConfig1.setBeeProGenid(beeProGenid);
+		manageConfig1.setBeeProMoreTable(beeProMoreTable);
+		manageConfig1.setBeeProMultiDS(beeProMultiDS);
+		manageConfig1.setBeeProNaming(beeProNaming);
+		manageConfig1.setBeeProPearFlowerId(beeProPearFlowerId);
+		manageConfig1.setBeeProReturnStringList(beeProReturnStringList);
+		manageConfig1.setBeeProSelectJson(beeProSelectJson);
+		manageConfig1.setBeeProShowSql(beeProShowSql);
 		
-		return manageConfig;
+		manageConfig1.updateConfig();
+		
+		return manageConfig1;
 	}
 
 }

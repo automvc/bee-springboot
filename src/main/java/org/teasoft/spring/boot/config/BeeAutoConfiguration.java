@@ -17,107 +17,45 @@
 
 package org.teasoft.spring.boot.config;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import javax.sql.DataSource;
+
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnSingleCandidate;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
-import org.teasoft.beex.config.BeePro;
-import org.teasoft.beex.config.BeeProCache;
-import org.teasoft.beex.config.BeeProDb;
-import org.teasoft.beex.config.BeeProGenid;
-import org.teasoft.beex.config.BeeProMoreTable;
-import org.teasoft.beex.config.BeeProMultiDS;
-import org.teasoft.beex.config.BeeProNaming;
-import org.teasoft.beex.config.BeeProPearFlowerId;
-import org.teasoft.beex.config.BeeProReturnStringList;
-import org.teasoft.beex.config.BeeProSelectJson;
-import org.teasoft.beex.config.BeeProShowSQL;
+import org.teasoft.honey.osql.core.BeeFactory;
+import org.teasoft.honey.osql.core.SessionFactory;
 
 /**
  * @author Kingstar
  * @since  1.9
  */
 @Configuration
-//@EnableAutoConfiguration
-@ImportResource("classpath:beeContext.xml")
+@AutoConfigureAfter({ BeeManageConfig.class, DataSourceAutoConfiguration.class, BeeXmlConfiguration.class })
 public class BeeAutoConfiguration {
 
-	@Bean
-	@ConditionalOnClass(BeePro.class)
-	@ConfigurationProperties(prefix = "bee.osql")
-	public BeePro getBeePro() {
-		return new BeePro();
+	public BeeAutoConfiguration() {
 	}
 
 	@Bean
-	@ConditionalOnClass(BeeProCache.class)
-	@ConfigurationProperties(prefix = "bee.osql.cache")
-	public BeeProCache getBeeProCache() {
-		return new BeeProCache();
+	@ConditionalOnMissingBean
+	@ConditionalOnSingleCandidate(DataSource.class)
+	public BeeFactory beeFactory(DataSource dataSource) {
+		BeeFactory beeFactory = BeeFactory.getInstance();
+		beeFactory.setDataSource(dataSource);
+		return beeFactory;
 	}
 
 	@Bean
-	@ConditionalOnClass(BeeProDb.class)
-	@ConfigurationProperties(prefix = "bee.db")
-	public BeeProDb getBeeProDb() {
-		return new BeeProDb();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProGenid.class)
-	@ConfigurationProperties(prefix = "bee.distribution.genid")
-	public BeeProGenid getBeeProGenid() {
-		return new BeeProGenid();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProMoreTable.class)
-	@ConfigurationProperties(prefix = "bee.osql.moreTable")
-	public BeeProMoreTable getBeeProMoreTable() {
-		return new BeeProMoreTable();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProMultiDS.class)
-	@ConfigurationProperties(prefix = "bee.dosql.multiDS")
-	public BeeProMultiDS getBeeProMultiDS() {
-		return new BeeProMultiDS();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProNaming.class)
-	@ConfigurationProperties(prefix = "bee.osql.naming")
-	public BeeProNaming getBeeProNaming() {
-		return new BeeProNaming();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProPearFlowerId.class)
-	@ConfigurationProperties(prefix = "bee.distribution.pearFlowerId")
-	public BeeProPearFlowerId getBeeProPearFlowerId() {
-		return new BeeProPearFlowerId();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProReturnStringList.class)
-	@ConfigurationProperties(prefix = "bee.osql.returnStringList")
-	public BeeProReturnStringList getBeeProReturnStringList() {
-		return new BeeProReturnStringList();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProSelectJson.class)
-	@ConfigurationProperties(prefix = "bee.osql.selectJson")
-	public BeeProSelectJson getBeeProSelectJson() {
-		return new BeeProSelectJson();
-	}
-
-	@Bean
-	@ConditionalOnClass(BeeProShowSQL.class)
-	@ConfigurationProperties(prefix = "bee.osql.showSQL")
-	public BeeProShowSQL getBeeProShowSQL() {
-		return new BeeProShowSQL();
+	@ConditionalOnMissingBean
+	@ConditionalOnBean(BeeFactory.class)
+	public SessionFactory sessionFactory(BeeFactory beeFactory) {
+		SessionFactory factory = new SessionFactory();
+		factory.setBeeFactory(beeFactory);
+		return factory;
 	}
 
 }
