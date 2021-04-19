@@ -19,7 +19,7 @@ https://gitee.com/automvc/bee
 
 快速开始:
 =========	
-* [bee-starter-demo](../../../bee-starter-demo)  
+[bee-starter-demo](../../../bee-starter-demo)  
 
 综合应用:
 =========	
@@ -30,7 +30,7 @@ https://gitee.com/automvc/bee
 **包括仅分库多数据源实例**	
 
 **更快的开发Spring Cloud微服务的新组合：**  
-**bee-spring-boot **
+[Bee + Spring Boot](../../../bee-springboot)  
 
 联系与欢迎:
 =========	
