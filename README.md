@@ -1,7 +1,9 @@
 
 Bee + Spring Boot
 =========
-**Bee integration with Spring Boot** 
+## Bee integration with Spring Boot 
+bee-spring-boot will help you to use Bee with Spring Boot.   
+It is faster development of new combinations for Spring Cloud microservices.   
 
 If you want to use the starter directly,please see:  
 [bee-spring-boot-starter](../../../bee-spring-boot-starter)  
@@ -12,6 +14,21 @@ If you want to use the starter directly,please see:
 https://github.com/automvc/bee  
 or:  
 https://gitee.com/automvc/bee  
+
+Quick Start
+=========	
+* [bee-spring-boot-starter](../../../bee-spring-boot-starter) 
+
+
+Rapid application development:
+=========	
+**Let Java more quicker programming than php and Rails.**  
+
+**Faster development of new combinations for Spring Cloud microservices:  ** 
+**bee-spring-boot **
+
+**Faster development of new combinations for Java Web：**  
+[Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
 
 
 Contact & Welcome:

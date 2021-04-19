@@ -1,7 +1,7 @@
 
 Bee + Spring Boot
 =========
-**Bee整合Spring Boot**,让你瞬间拥有两样开速开发利器! 
+## Bee整合Spring Boot,让你瞬间拥有两样快速开发利器! 
 
 如果想直接使用starter,请查看:  
 [bee-spring-boot-starter](../../../bee-spring-boot-starter)  
@@ -17,6 +17,20 @@ https://github.com/automvc/bee
 或者:  
 https://gitee.com/automvc/bee  
 
+快速开始:
+=========	
+* [bee-starter-demo](../../../bee-starter-demo)  
+
+综合应用:
+=========	
+**Java快速编程, 让Java的开发速度超过php和Rails。**  
+
+**更快的开发Java Web的新组合：**  
+[Bee+Spring+SpringMVC](../../../../aiteasoft/bee-spring-springmvc)  
+**包括仅分库多数据源实例**	
+
+**更快的开发Spring Cloud微服务的新组合：**  
+**bee-spring-boot **
 
 联系与欢迎:
 =========	
