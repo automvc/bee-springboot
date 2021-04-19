@@ -3,12 +3,15 @@ Bee + Spring Boot
 =========
 **Bee integration with Spring Boot** 
 
+If you want to use the starter directly,please see:  
+[bee-spring-boot-starter](../../../bee-spring-boot-starter)  
+
 **Bee** is an easy and high efficiency ORM framework.   
 
 **Bee** see:  
-[https://github.com/automvc/bee](https://github.com/automvc/bee)  
+https://github.com/automvc/bee  
 or:  
-[https://gitee.com/automvc/bee](https://gitee.com/automvc/bee)  
+https://gitee.com/automvc/bee  
 
 
 Contact & Welcome:
