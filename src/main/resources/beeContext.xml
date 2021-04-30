@@ -27,9 +27,9 @@
 	<bean id="mapSuid" class="org.teasoft.honey.osql.core.MapSuidImpl">
 		<property name="beeSql" ref="beeSql"></property>	
 	</bean>
-	
-	<bean id="condition" class="org.teasoft.honey.osql.core.ConditionImpl"/>
-	<bean id="mapSql" class="org.teasoft.honey.osql.core.MapSqlImpl"/>
+
+	<bean id="condition" class="org.teasoft.honey.osql.core.ConditionImpl" scope="prototype" />
+	<bean id="mapSql" class="org.teasoft.honey.osql.core.MapSqlImpl" scope="prototype" />
 
 	<bean id="objSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
 		<property name="suid" ref="suid"></property>
