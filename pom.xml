@@ -48,12 +48,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>bee</artifactId>
 			<version>${bee.version}</version>
