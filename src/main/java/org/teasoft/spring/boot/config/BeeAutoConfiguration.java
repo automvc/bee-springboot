@@ -37,8 +37,7 @@ import org.teasoft.honey.osql.core.SessionFactory;
 @AutoConfigureAfter({ BeeManageConfig.class, DataSourceAutoConfiguration.class, BeeXmlConfiguration.class })
 public class BeeAutoConfiguration {
 
-	public BeeAutoConfiguration() {
-	}
+	public BeeAutoConfiguration() {}
 
 	@Bean
 	@ConditionalOnMissingBean

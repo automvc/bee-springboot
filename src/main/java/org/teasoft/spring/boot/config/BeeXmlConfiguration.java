@@ -15,7 +15,6 @@
  * limitations under the License.
  */
 
-
 package org.teasoft.spring.boot.config;
 
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +28,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource("classpath:beeContext.xml")
 public class BeeXmlConfiguration {
 	
-	public BeeXmlConfiguration() {
-	}
+	public BeeXmlConfiguration() {}
 
 }
