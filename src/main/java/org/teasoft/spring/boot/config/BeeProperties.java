@@ -70,14 +70,14 @@ public class BeeProperties {
 
 	@Bean
 	@ConditionalOnClass(BeeProMoreTable.class)
-	@ConfigurationProperties(prefix = "bee.osql.moreTable")
+	@ConfigurationProperties(prefix = "bee.osql.more-table")
 	public BeeProMoreTable getBeeProMoreTable() {
 		return new BeeProMoreTable();
 	}
 
 	@Bean
 	@ConditionalOnClass(BeeProMultiDS.class)
-	@ConfigurationProperties(prefix = "bee.dosql.multiDS")
+	@ConfigurationProperties(prefix = "bee.dosql.multi-d-s")
 	public BeeProMultiDS getBeeProMultiDS() {
 		return new BeeProMultiDS();
 	}
@@ -91,28 +91,28 @@ public class BeeProperties {
 
 	@Bean
 	@ConditionalOnClass(BeeProPearFlowerId.class)
-	@ConfigurationProperties(prefix = "bee.distribution.pearFlowerId")
+	@ConfigurationProperties(prefix = "bee.distribution.pear-flower-id")
 	public BeeProPearFlowerId getBeeProPearFlowerId() {
 		return new BeeProPearFlowerId();
 	}
 
 	@Bean
 	@ConditionalOnClass(BeeProReturnStringList.class)
-	@ConfigurationProperties(prefix = "bee.osql.returnStringList")
+	@ConfigurationProperties(prefix = "bee.osql.return-string-list")
 	public BeeProReturnStringList getBeeProReturnStringList() {
 		return new BeeProReturnStringList();
 	}
 
 	@Bean
 	@ConditionalOnClass(BeeProSelectJson.class)
-	@ConfigurationProperties(prefix = "bee.osql.selectJson")
+	@ConfigurationProperties(prefix = "bee.osql.select-json")
 	public BeeProSelectJson getBeeProSelectJson() {
 		return new BeeProSelectJson();
 	}
 
 	@Bean
 	@ConditionalOnClass(BeeProShowSql.class)
-	@ConfigurationProperties(prefix = "bee.osql.showSql")
+	@ConfigurationProperties(prefix = "bee.osql.show-sql")
 	public BeeProShowSql getBeeProShowSql() {
 		return new BeeProShowSql();
 	}
