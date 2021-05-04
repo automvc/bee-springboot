@@ -10,6 +10,9 @@ If you want to use the starter directly,please see:
 
 **Bee** is an easy and high efficiency ORM framework.   
 
+**Spring Boot** makes it easy to create stand-alone, production-grade Spring based Applications    
+that you can "just run". Most Spring Boot applications need minimal Spring configuration.   
+
 **Bee** see:  
 https://github.com/automvc/bee  
 or:  
