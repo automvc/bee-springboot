@@ -7,11 +7,20 @@
 	<bean id="beeSql" class="org.teasoft.honey.osql.core.SqlLib">
 	</bean>
 	
+	<bean id="objToSQL" class="org.teasoft.honey.osql.core.ObjectToSQL" scope="prototype" >
+	</bean>
+	<bean id="objToSQLRich" class="org.teasoft.honey.osql.core.ObjectToSQLRich" scope="prototype" >
+	</bean>
+	<bean id="moreObjToSQL" class="org.teasoft.honey.osql.core.MoreObjectToSQL" scope="prototype" >
+	</bean>
+	
 	<bean id="suid" class="org.teasoft.honey.osql.core.ObjSQL">
 		<property name="beeSql" ref="beeSql"></property>
+		<property name="objToSQL" ref="objToSQL"></property>
 	</bean>
 	<bean id="suidRich" class="org.teasoft.honey.osql.core.ObjSQLRich">
 	     <property name="beeSql" ref="beeSql"></property>
+	     <property name="objToSQLRich" ref="objToSQLRich"></property>
 	</bean>
 	
 	<bean id="preparedSql" class="org.teasoft.honey.osql.core.PreparedSqlLib">
@@ -22,6 +31,7 @@
 	
 	<bean id="moreTable" class="org.teasoft.honey.osql.core.MoreObjSQL">
 		<property name="beeSql" ref="beeSql"></property>
+		<property name="moreObjToSQL" ref="moreObjToSQL"></property>
 	</bean>
 	
 	<bean id="mapSuid" class="org.teasoft.honey.osql.core.MapSuidImpl">
