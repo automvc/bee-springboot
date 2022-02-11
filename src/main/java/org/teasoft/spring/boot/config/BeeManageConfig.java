@@ -23,6 +23,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.teasoft.beex.config.BeePro;
 import org.teasoft.beex.config.BeeProCache;
+import org.teasoft.beex.config.BeeProCacheRedis;
 import org.teasoft.beex.config.BeeProDb;
 import org.teasoft.beex.config.BeeProGenid;
 import org.teasoft.beex.config.BeeProMoreTable;
@@ -44,6 +45,8 @@ public class BeeManageConfig {
 	private BeePro beePro;
 	@Autowired
 	private BeeProCache beeProCache;
+	@Autowired
+	private BeeProCacheRedis beeProCacheRedis;
 	@Autowired
 	private BeeProDb beeProDb;
 	@Autowired
@@ -71,6 +74,7 @@ public class BeeManageConfig {
 		
 		manageConfig1.setBeePro(beePro);
 		manageConfig1.setBeeProCache(beeProCache);
+		manageConfig1.setBeeProCacheRedis(beeProCacheRedis);
 		manageConfig1.setBeeProDb(beeProDb);
 		manageConfig1.setBeeProGenid(beeProGenid);
 		manageConfig1.setBeeProMoreTable(beeProMoreTable);
