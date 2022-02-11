@@ -23,6 +23,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.teasoft.beex.config.BeePro;
 import org.teasoft.beex.config.BeeProCache;
+import org.teasoft.beex.config.BeeProCacheRedis;
 import org.teasoft.beex.config.BeeProDb;
 import org.teasoft.beex.config.BeeProGenid;
 import org.teasoft.beex.config.BeeProMoreTable;
@@ -52,6 +53,13 @@ public class BeeProperties {
 	@ConfigurationProperties(prefix = "bee.osql.cache")
 	public BeeProCache getBeeProCache() {
 		return new BeeProCache();
+	}
+	
+	@Bean
+	@ConditionalOnClass(BeeProCacheRedis.class)
+	@ConfigurationProperties(prefix = "bee.osql.cache-redis")
+	public BeeProCacheRedis getBeeProCacheRedis() {
+		return new BeeProCacheRedis();
 	}
 
 	@Bean
