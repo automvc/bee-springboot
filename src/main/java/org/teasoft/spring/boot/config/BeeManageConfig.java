@@ -30,6 +30,7 @@ import org.teasoft.beex.config.BeeProMoreTable;
 import org.teasoft.beex.config.BeeProMultiDS;
 import org.teasoft.beex.config.BeeProNaming;
 import org.teasoft.beex.config.BeeProPearFlowerId;
+import org.teasoft.beex.config.BeeProProfiles;
 import org.teasoft.beex.config.BeeProReturnStringList;
 import org.teasoft.beex.config.BeeProSelectJson;
 import org.teasoft.beex.config.BeeProShowSql;
@@ -49,6 +50,8 @@ public class BeeManageConfig {
 	private BeeProCacheRedis beeProCacheRedis;
 	@Autowired
 	private BeeProDb beeProDb;
+	@Autowired
+	private BeeProProfiles beeProProfiles; //V1.11
 	@Autowired
 	private BeeProGenid beeProGenid;
 	@Autowired
@@ -76,6 +79,7 @@ public class BeeManageConfig {
 		manageConfig1.setBeeProCache(beeProCache);
 		manageConfig1.setBeeProCacheRedis(beeProCacheRedis);
 		manageConfig1.setBeeProDb(beeProDb);
+		manageConfig1.setBeeProProfiles(beeProProfiles); //V1.11
 		manageConfig1.setBeeProGenid(beeProGenid);
 		manageConfig1.setBeeProMoreTable(beeProMoreTable);
 		manageConfig1.setBeeProMultiDS(beeProMultiDS);

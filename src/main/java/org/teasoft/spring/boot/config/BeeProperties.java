@@ -30,6 +30,7 @@ import org.teasoft.beex.config.BeeProMoreTable;
 import org.teasoft.beex.config.BeeProMultiDS;
 import org.teasoft.beex.config.BeeProNaming;
 import org.teasoft.beex.config.BeeProPearFlowerId;
+import org.teasoft.beex.config.BeeProProfiles;
 import org.teasoft.beex.config.BeeProReturnStringList;
 import org.teasoft.beex.config.BeeProSelectJson;
 import org.teasoft.beex.config.BeeProShowSql;
@@ -67,6 +68,13 @@ public class BeeProperties {
 	@ConfigurationProperties(prefix = "bee.db")
 	public BeeProDb getBeeProDb() {
 		return new BeeProDb();
+	}
+	
+	@Bean
+	@ConditionalOnClass(BeeProProfiles.class)
+	@ConfigurationProperties(prefix = "bee.profiles")
+	public BeeProProfiles getBeeProProfiles() { //V1.11
+		return new BeeProProfiles();
 	}
 
 	@Bean
