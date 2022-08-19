@@ -50,4 +50,6 @@
 		<property name="suidRich" ref="suidRich"></property>
 	</bean>
 	
+	<bean id="tranHandler" class="org.teasoft.beex.transaction.TranHandler"></bean>
+	
 </beans>
