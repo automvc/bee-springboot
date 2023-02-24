@@ -33,6 +33,7 @@ import org.teasoft.beex.config.BeeProPearFlowerId;
 import org.teasoft.beex.config.BeeProProfiles;
 import org.teasoft.beex.config.BeeProReturnStringList;
 import org.teasoft.beex.config.BeeProSelectJson;
+import org.teasoft.beex.config.BeeProSharding;
 import org.teasoft.beex.config.BeeProShowSql;
 
 /**
@@ -97,7 +98,14 @@ public class BeeProperties {
 	public BeeProMultiDS getBeeProMultiDS() {
 		return new BeeProMultiDS();
 	}
-
+	
+	@Bean
+	@ConditionalOnClass(BeeProSharding.class)
+	@ConfigurationProperties(prefix = "bee.dosql.sharding")
+	public BeeProSharding getBeeProSharding() {
+		return new BeeProSharding();
+	}
+	
 	@Bean
 	@ConditionalOnClass(BeeProNaming.class)
 	@ConfigurationProperties(prefix = "bee.osql.naming")

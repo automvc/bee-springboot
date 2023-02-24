@@ -19,8 +19,11 @@
 		<property name="objToSQL" ref="objToSQL"></property>
 	</bean>
 	<bean id="suidRich" class="org.teasoft.honey.osql.core.ObjSQLRich">
-	     <property name="beeSql" ref="beeSql"></property>
+<!-- 	     <property name="beeSql" ref="beeSql"></property> -->
 	     <property name="objToSQLRich" ref="objToSQLRich"></property>
+	</bean>
+	
+	<bean id="suidRichExt" class="org.teasoft.beex.osql.ObjSQLRichExt" >
 	</bean>
 	
 	<bean id="preparedSql" class="org.teasoft.honey.osql.core.PreparedSqlLib">
@@ -46,10 +49,22 @@
 	</bean>
 
 	<bean id="objSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
-		<property name="suid" ref="suid"></property>
+<!-- 		<property name="suid" ref="suid"></property> -->
 		<property name="suidRich" ref="suidRich"></property>
 	</bean>
 	
 	<bean id="tranHandler" class="org.teasoft.beex.transaction.TranHandler"></bean>
+	
+<!--     for Mongodb    -->
+	<bean id="mongoSuid" class="org.teasoft.honey.osql.core.MongodbObjSQL">
+	</bean>
+	<bean id="mongoSuidRich" class="org.teasoft.honey.osql.core.MongodbObjSQLRich">
+	</bean>
+	<bean id="mongodbObjSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
+		<property name="suid" ref="mongoSuid"></property>
+	</bean>
+	<bean id="mongodbObjSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
+		<property name="suidRich" ref="mongoSuidRich"></property>
+	</bean>
 	
 </beans>

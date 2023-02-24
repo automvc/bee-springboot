@@ -33,6 +33,7 @@ import org.teasoft.beex.config.BeeProPearFlowerId;
 import org.teasoft.beex.config.BeeProProfiles;
 import org.teasoft.beex.config.BeeProReturnStringList;
 import org.teasoft.beex.config.BeeProSelectJson;
+import org.teasoft.beex.config.BeeProSharding;
 import org.teasoft.beex.config.BeeProShowSql;
 import org.teasoft.beex.config.ManageConfig;
 
@@ -59,6 +60,8 @@ public class BeeManageConfig {
 	@Autowired
 	private BeeProMultiDS beeProMultiDS;
 	@Autowired
+	private BeeProSharding beeProSharding; //V2.0
+	@Autowired
 	private BeeProNaming beeProNaming;
 	@Autowired
 	private BeeProPearFlowerId beeProPearFlowerId;
@@ -83,6 +86,7 @@ public class BeeManageConfig {
 		manageConfig1.setBeeProGenid(beeProGenid);
 		manageConfig1.setBeeProMoreTable(beeProMoreTable);
 		manageConfig1.setBeeProMultiDS(beeProMultiDS);
+		manageConfig1.setBeeProSharding(beeProSharding);
 		manageConfig1.setBeeProNaming(beeProNaming);
 		manageConfig1.setBeeProPearFlowerId(beeProPearFlowerId);
 		manageConfig1.setBeeProReturnStringList(beeProReturnStringList);
