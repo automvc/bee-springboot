@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	
+<!-- 使用Mongodb时才会加载,由开关bee.db.hasMongodb=true控制 -->
+<!--     for Mongodb    -->
+	<bean id="mongoSuid" class="org.teasoft.honey.osql.core.MongodbObjSQL">
+	</bean>
+	<bean id="mongoSuidRich" class="org.teasoft.honey.osql.core.MongodbObjSQLRich">
+	</bean>
+	<bean id="mongodbObjSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
+		<property name="suid" ref="mongoSuid"></property>
+	</bean>
+	<bean id="mongodbObjSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
+		<property name="suidRich" ref="mongoSuidRich"></property>
+	</bean>
+	<bean id="mongoSuidRichExt" class="org.teasoft.beex.osql.mongodb.MongodbObjSQLRichExt" >
+	</bean>
+	
+</beans>

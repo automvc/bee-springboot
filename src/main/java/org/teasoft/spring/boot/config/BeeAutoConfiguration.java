@@ -34,7 +34,8 @@ import org.teasoft.honey.osql.core.SessionFactory;
  * @since  1.9
  */
 @Configuration
-@AutoConfigureAfter({ BeeManageConfig.class, DataSourceAutoConfiguration.class, BeeXmlConfiguration.class })
+@AutoConfigureAfter({ BeeManageConfig.class, DataSourceAutoConfiguration.class,
+		BeeXmlConfiguration.class, BeeMongoXmlConfiguration.class })
 public class BeeAutoConfiguration {
 
 	public BeeAutoConfiguration() {}

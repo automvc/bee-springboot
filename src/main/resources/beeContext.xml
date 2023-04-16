@@ -55,16 +55,4 @@
 	
 	<bean id="tranHandler" class="org.teasoft.beex.transaction.TranHandler"></bean>
 	
-<!--     for Mongodb    -->
-	<bean id="mongoSuid" class="org.teasoft.honey.osql.core.MongodbObjSQL">
-	</bean>
-	<bean id="mongoSuidRich" class="org.teasoft.honey.osql.core.MongodbObjSQLRich">
-	</bean>
-	<bean id="mongodbObjSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
-		<property name="suid" ref="mongoSuid"></property>
-	</bean>
-	<bean id="mongodbObjSQLRichService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLRichServiceImpl">
-		<property name="suidRich" ref="mongoSuidRich"></property>
-	</bean>
-	
 </beans>
