@@ -8,8 +8,13 @@
 <!-- 使用Mongodb时才会加载,由开关bee.db.hasMongodb=true控制 -->
 <!--     for Mongodb    -->
 	<bean id="mongoSuid" class="org.teasoft.honey.osql.core.MongodbObjSQL">
+	  <property name="mongodbBeeSql" ref="mongodbBeeSql"></property>
 	</bean>
 	<bean id="mongoSuidRich" class="org.teasoft.honey.osql.core.MongodbObjSQLRich">
+	</bean>
+	<bean id="mongodbRawSql" class="org.teasoft.honey.osql.core.MongodbRawSqlLib">
+	</bean>
+	<bean id="mongodbBeeSql" class="org.teasoft.beex.mongodb.MongodbSqlLib">
 	</bean>
 	<bean id="mongodbObjSQLService" class="org.teasoft.honey.osql.serviceimpl.ObjSQLServiceImpl">
 		<property name="suid" ref="mongoSuid"></property>
