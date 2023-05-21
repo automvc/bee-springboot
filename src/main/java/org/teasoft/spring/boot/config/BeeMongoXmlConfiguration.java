@@ -31,8 +31,6 @@ import org.springframework.context.annotation.ImportResource;
 @ImportResource("classpath:beeMongoContext.xml")
 public class BeeMongoXmlConfiguration {
 	
-	public BeeMongoXmlConfiguration() {
-//		System.out.println(">>>>>>>>>>>>>init Bean BeeMongoXmlConfiguration...");
-	}
+	public BeeMongoXmlConfiguration() {}
 
 }
