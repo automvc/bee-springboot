@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.teasoft</groupId>
 	<artifactId>bee-spring-boot</artifactId>
-	<version>2.1-SNAPSHOT</version>
+	<version>2.1</version>
 
 	<packaging>jar</packaging>
 	<name>bee-spring-boot</name>
@@ -97,6 +97,7 @@
                     <docencoding>UTF-8</docencoding>
                     <locale>en_US</locale>
                     <additionalparam>-Xdoclint:none</additionalparam>
+                    <doclint>none</doclint>
                 </configuration>
                 <executions>
                     <execution>
