@@ -23,7 +23,7 @@ import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author Kingstar
- * @since  1.9
+ * @since  2.1
  */
 @Configuration
 //@ConditionalOnProperty(prefix = "bee.db",name = "hasmongodb", havingValue = "true", matchIfMissing = false)//ok
