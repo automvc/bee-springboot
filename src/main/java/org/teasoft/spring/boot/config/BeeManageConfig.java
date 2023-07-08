@@ -86,7 +86,7 @@ public class BeeManageConfig {
 		manageConfig1.setBeeProGenid(beeProGenid);
 		manageConfig1.setBeeProMoreTable(beeProMoreTable);
 		manageConfig1.setBeeProMultiDS(beeProMultiDS);
-		manageConfig1.setBeeProSharding(beeProSharding);
+		manageConfig1.setBeeProSharding(beeProSharding); //2.0
 		manageConfig1.setBeeProNaming(beeProNaming);
 		manageConfig1.setBeeProPearFlowerId(beeProPearFlowerId);
 		manageConfig1.setBeeProReturnStringList(beeProReturnStringList);

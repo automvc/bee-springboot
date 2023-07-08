@@ -5,5 +5,3 @@ org.teasoft.spring.boot.config.BeeManageConfig,\
 org.teasoft.spring.boot.config.BeeXmlConfiguration,\
 org.teasoft.spring.boot.config.BeeMongoXmlConfiguration,\
 org.teasoft.spring.boot.config.BeeAutoConfiguration
-
-

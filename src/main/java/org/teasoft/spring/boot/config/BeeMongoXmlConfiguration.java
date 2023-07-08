@@ -26,7 +26,6 @@ import org.springframework.context.annotation.ImportResource;
  * @since  2.1
  */
 @Configuration
-//@ConditionalOnProperty(prefix = "bee.db",name = "hasmongodb", havingValue = "true", matchIfMissing = false)//ok
 @ConditionalOnProperty(name = "bee.db.hasMongodb", havingValue = "true", matchIfMissing = false)
 @ImportResource("classpath:beeMongoContext.xml")
 public class BeeMongoXmlConfiguration {
