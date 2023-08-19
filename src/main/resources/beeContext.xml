@@ -35,6 +35,7 @@
 	<bean id="moreTable" class="org.teasoft.honey.osql.core.MoreObjSQL">
 		<property name="beeSql" ref="beeSql"></property>
 		<property name="moreObjToSQL" ref="moreObjToSQL"></property>
+		<property name="suidRich" ref="suidRich"></property>  <!-- 用于多表插入 -->
 	</bean>
 	
 	<bean id="mapSuid" class="org.teasoft.honey.osql.core.MapSuidImpl">
