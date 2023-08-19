@@ -140,5 +140,12 @@ public class BeeProperties {
 	public BeeProShowSql getBeeProShowSql() {
 		return new BeeProShowSql();
 	}
+	
+	@Bean
+	@ConditionalOnClass(SpringDatasourceConfig.class)
+	@ConfigurationProperties(prefix = "spring.datasource")
+	public SpringDatasourceConfig getSpringDatasourceConfig() {
+		return new SpringDatasourceConfig();
+	}
 
 }

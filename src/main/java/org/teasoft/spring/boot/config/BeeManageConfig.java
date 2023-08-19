@@ -20,7 +20,10 @@ package org.teasoft.spring.boot.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.env.Environment;
+//import org.springframework.stereotype.Component;
 import org.teasoft.beex.config.BeePro;
 import org.teasoft.beex.config.BeeProCache;
 import org.teasoft.beex.config.BeeProCacheRedis;
@@ -36,13 +39,14 @@ import org.teasoft.beex.config.BeeProSelectJson;
 import org.teasoft.beex.config.BeeProSharding;
 import org.teasoft.beex.config.BeeProShowSql;
 import org.teasoft.beex.config.ManageConfig;
+import org.teasoft.honey.util.StringUtils;
 
 /**
  * @author Kingstar
  * @since  1.9
  */
 @AutoConfigureAfter(BeeProperties.class)
-public class BeeManageConfig {
+public class BeeManageConfig implements EnvironmentAware{
 	@Autowired
 	private BeePro beePro;
 	@Autowired
@@ -69,15 +73,37 @@ public class BeeManageConfig {
 	private BeeProReturnStringList beeProReturnStringList;
 	@Autowired
 	private BeeProSelectJson beeProSelectJson;
+	
 	@Autowired
 	private BeeProShowSql beeProShowSql;
+	
+	@Autowired
+	private SpringDatasourceConfig springDatasourceConfig;
 	
 	@Bean
 	@ConditionalOnClass(ManageConfig.class)
 	public ManageConfig manageConfig() {
 		
-		ManageConfig manageConfig1=new ManageConfig();
+		//spring.datasource与bee.db四个属性整合,spring.datasource会覆盖bee.db的
+		if (getSpringDatasourceConfig() != null && getBeeProDb() != null) {
+			if (StringUtils.isNotBlank(getSpringDatasourceConfig().getUrl())) {
+				getBeeProDb().setUrl(getSpringDatasourceConfig().getUrl());
+			}
+
+			if (StringUtils.isNotBlank(getSpringDatasourceConfig().getUsername())) {
+				getBeeProDb().setUsername(getSpringDatasourceConfig().getUsername());
+			}
+
+			if (StringUtils.isNotBlank(getSpringDatasourceConfig().getPassword())) {
+				getBeeProDb().setPassword(getSpringDatasourceConfig().getPassword());
+			}
+
+			if (StringUtils.isNotBlank(getSpringDatasourceConfig().getDriverClassName())) {
+				getBeeProDb().setDriverName(getSpringDatasourceConfig().getDriverClassName());
+			}
+		}
 		
+		ManageConfig manageConfig1 = new ManageConfig();
 		manageConfig1.setBeePro(beePro);
 		manageConfig1.setBeeProCache(beeProCache);
 		manageConfig1.setBeeProCacheRedis(beeProCacheRedis);
@@ -97,5 +123,41 @@ public class BeeManageConfig {
 		
 		return manageConfig1;
 	}
+	
+	@Override
+	public void setEnvironment(Environment environment) {
+		String active = environment.getProperty("spring.profiles.active");
+		if (StringUtils.isNotBlank(active)) {
+			BeeProProfiles profiles= getBeeProProfiles();
+            if(profiles!=null) {
+            	profiles.setActive(active);
+            	profiles.setType(1);
+            }
+		}
+	}
 
+	public BeeProProfiles getBeeProProfiles() {
+		return beeProProfiles;
+	}
+
+	public void setBeeProProfiles(BeeProProfiles beeProProfiles) {
+		this.beeProProfiles = beeProProfiles;
+	}
+
+	public SpringDatasourceConfig getSpringDatasourceConfig() {
+		return springDatasourceConfig;
+	}
+
+	public void setSpringDatasourceConfig(SpringDatasourceConfig springDatasourceConfig) {
+		this.springDatasourceConfig = springDatasourceConfig;
+	}
+
+	public BeeProDb getBeeProDb() {
+		return beeProDb;
+	}
+
+	public void setBeeProDb(BeeProDb beeProDb) {
+		this.beeProDb = beeProDb;
+	}
+	
 }
