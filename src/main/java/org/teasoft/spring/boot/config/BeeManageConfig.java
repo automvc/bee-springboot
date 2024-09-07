@@ -23,7 +23,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
-//import org.springframework.stereotype.Component;
 import org.teasoft.beex.config.BeePro;
 import org.teasoft.beex.config.BeeProCache;
 import org.teasoft.beex.config.BeeProCacheRedis;
