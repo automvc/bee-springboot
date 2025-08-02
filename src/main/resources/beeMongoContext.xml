@@ -25,4 +25,11 @@
 	<bean id="mongoSuidRichExt" class="org.teasoft.beex.osql.mongodb.MongodbObjSQLRichExt" >
 	</bean>
 	
+	<bean id="mongoQuery" class="org.teasoft.honey.osql.core.cqrs.QueryImpl">
+		<property name="suidRich" ref="mongoSuidRich"></property>
+	</bean>
+	<bean id="mongoCommand" class="org.teasoft.honey.osql.core.cqrs.CommandImpl">
+		<property name="suidRich" ref="mongoSuidRich"></property>
+	</bean>
+	
 </beans>

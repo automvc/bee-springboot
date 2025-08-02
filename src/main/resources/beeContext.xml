@@ -56,5 +56,15 @@
 	</bean>
 	
 	<bean id="tranHandler" class="org.teasoft.beex.transaction.TranHandler"></bean>
+<!-- 	<bean id="beeAopAspect" class="org.teasoft.beex.aop.BeeAopAspect"></bean> -->
+
+
+	<bean id="query" class="org.teasoft.honey.osql.core.cqrs.QueryImpl">
+		<property name="suidRich" ref="suidRich"></property>
+	</bean>
+	<bean id="command" class="org.teasoft.honey.osql.core.cqrs.CommandImpl">
+		<property name="suidRich" ref="suidRich"></property>
+	</bean>
+	
 	
 </beans>
